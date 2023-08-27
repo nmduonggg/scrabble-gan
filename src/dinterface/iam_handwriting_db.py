@@ -64,7 +64,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
             transcription = transcriptions[img_nm]
 
             # filter samples with chars other a-zA-Z
-            if transcription.isalpha() and len(transcription) > 0:
+            if len(transcription) > 0:
                 len_word = len(transcription)
 
                 # read image (grayscale mode) and resize to common data size
