@@ -40,5 +40,5 @@ def init_reading(train_input, train_output, target_size, bucket_size):
     :param bucket_size:
     :return:
     """
-    print('convert iamDB words to GAN-Reading task...\n')
+    print('convert vnDB words to GAN-Reading task...\n')
     convert_to_gan_reading_format_save(train_input, train_output, target_size, bucket_size)
