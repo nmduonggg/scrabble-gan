@@ -48,7 +48,7 @@ def setup_io(base_path, checkpoint_dir, gen_imgs_dir, model_dir, raw_dir, read_d
 
 def main():
     # init params
-    gin.parse_config_file('scrabble_gan.gin')
+    gin.parse_config_file('src/scrabble_gan.gin')
     epochs, batch_size, latent_dim, embed_y, num_gen, kernel_reg, g_bw_attention, d_bw_attention = get_shared_specs()
     in_dim, buf_size, n_classes, seq_len, bucket_size, ckpt_path, gen_path, m_path, raw_dir, read_dir, char_vec = setup_io()
 
