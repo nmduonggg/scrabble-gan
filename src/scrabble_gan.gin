@@ -29,7 +29,7 @@ io.model_dir = '/res/out/big_ac_gan/model/'
 # Dataset
 io.input_dim = (32, 160, 1)
 io.buf_size = 80377
-io.n_classes = 107
+io.n_classes = 155
 io.seq_len = None
 io.bucket_size = 7
 io.raw_dir = '/res/data/vnDB/words/'
