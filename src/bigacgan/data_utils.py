@@ -46,11 +46,14 @@ def load_prepare_data(input_dim, batch_size, reading_dir, char_vector, bucket_si
         for file in file_list:
             with open(reading_dir_bucket + file, 'r', encoding='utf8') as f:
                 # 'auto' -> [0, 20, 19, 14]
-                label = [char_vector.index(char) for char in f.readline()]
-                img = cv2.imread(os.path.join(reading_dir_bucket, os.path.splitext(file)[0] + '.png'), 0)
-                imgs.append(img)
-                labels.append(label)
-                number_samples += 1
+                try:
+                    label = [char_vector.index(char) for char in f.readline()]
+                    img = cv2.imread(os.path.join(reading_dir_bucket, os.path.splitext(file)[0]), 0)
+                    imgs.append(img)
+                    labels.append(label)
+                    number_samples += 1
+                except:
+                    print(f.readline())
 
         data_buckets[i] = (imgs, labels)
 
