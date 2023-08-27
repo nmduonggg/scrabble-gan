@@ -331,12 +331,12 @@ def load_random_word_list(reading_dir, bucket_size, char_vector):
             bucket = len(word)
 
             if bucket <= bucket_size:
-                # random_chars = []
-                # for char in word:
-                #     try: 
-                #         random_chars.append(char_vector.index(char))
-                #     except:
-                #         print(char)
+                random_chars = []
+                for char in word:
+                    try: 
+                        random_chars.append(char_vector.index(char))
+                    except:
+                        print(char)
                 random_words[bucket - 1].append([char_vector.index(char) for char in word])
 
     return random_words
