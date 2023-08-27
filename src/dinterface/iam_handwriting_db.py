@@ -41,7 +41,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
         for line in fi:
             if not line.startswith('#'):
                 labels = line.split()
-                file_nm = labels[0] + '.png'
+                file_nm = labels[0]
 
                 # mark not properly segmented words as '-1'
                 if 'ok' == labels[1]:
@@ -55,7 +55,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
     # (3) process/ filter images along its respective transcriptions
     for idx, file in enumerate(listOfFiles):
 
-        if file.endswith(".png"):
+        if file.endswith(".png") or file.endswith(".jpg"):
 
             print(file)
             # get file name and its corresponding transcription
