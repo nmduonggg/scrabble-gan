@@ -1,6 +1,7 @@
 import cv2
 import os
 from collections import Counter
+import tqdm
 
 
 def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucket_size):
@@ -53,7 +54,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
     print('size of iamDB words: {}'.format(len(transcriptions)))
 
     # (3) process/ filter images along its respective transcriptions
-    for idx, file in enumerate(listOfFiles):
+    for idx, file in tqdm.tqdm(enumerate(listOfFiles), total=len(listOfFiles)):
 
         if file.endswith(".png") or file.endswith(".jpg"):
 
