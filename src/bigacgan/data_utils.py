@@ -5,7 +5,7 @@ import time
 import cv2
 import numpy as np
 import tensorflow as tf
-
+import tqdm
 import imageio
 import matplotlib.pyplot as plt
 import random
@@ -121,7 +121,7 @@ def train(dataset, generator, discriminator, recognizer, composite_gan, checkpoi
     for epoch_idx in range(epochs):
         start = time.time()
 
-        for batch_idx in range(batch_per_epoch):
+        for batch_idx in tqdm.tqdm(range(batch_per_epoch), total=batch_per_epoch):
             image_batch, label_batch = next(dataset)
 
             train_step(epoch_idx, batch_idx, batch_per_epoch, image_batch, label_batch, discriminator, recognizer,

@@ -57,7 +57,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
 
         if file.endswith(".png") or file.endswith(".jpg"):
 
-            print(file)
+            # print(file)
             # get file name and its corresponding transcription
             img_nm = os.path.basename(file)
             transcription = transcriptions[img_nm]
