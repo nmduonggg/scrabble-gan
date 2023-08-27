@@ -48,7 +48,7 @@ def load_prepare_data(input_dim, batch_size, reading_dir, char_vector, bucket_si
                 # 'auto' -> [0, 20, 19, 14]
                 try:
                     label = [char_vector.index(char) for char in f.readline()]
-                    img_path = os.path.join(reading_dir_bucket, os.path.splitext(file)[0] + 'jpg') if \
+                    img_path = os.path.join(reading_dir_bucket, os.path.splitext(file)[0] + '.jpg') if \
                                os.path.isfile(os.path.join(reading_dir_bucket, os.path.splitext(file)[0] + 'jpg')) else\
                                os.path.join(reading_dir_bucket, os.path.splitext(file)[0] + '.png')
                                
