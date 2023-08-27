@@ -128,7 +128,7 @@ def train(dataset, generator, discriminator, recognizer, composite_gan, checkpoi
     for epoch_idx in range(epochs):
         start = time.time()
 
-        for batch_idx in tqdm.tqdm(range(batch_per_epoch), total=batch_per_epoch):
+        for batch_idx in range(batch_per_epoch):
             image_batch, label_batch = next(dataset)
 
             train_step(epoch_idx, batch_idx, batch_per_epoch, image_batch, label_batch, discriminator, recognizer,
@@ -222,7 +222,7 @@ def train_step(epoch_idx, batch_idx, batch_per_epoch, images, labels, discrimina
         d_loss_fake_mean = tf.reduce_mean(d_loss_fake)
         g_loss_balanced_mean = tf.reduce_mean(g_loss_balanced)
 
-    tf.print('>%d, %d/%d, d=%.3f, d_real=%.3f, d_fake=%.3f, g_trad=%.3f, r_loss_fake=%.3f, g_loss=%.3f, r=%.3f' % (
+    tf.print('[%d][%d/%d] | d=%.3f, d_real=%.3f, d_fake=%.3f, g_trad=%.3f, r_loss_fake=%.3f, g_loss=%.3f, r=%.3f' % (
         epoch_idx + 1, batch_idx + 1, batch_per_epoch, d_loss_mean, d_loss_real_mean, d_loss_fake_mean, g_loss_mean,
         r_loss_fake_mean, g_loss_balanced_mean, r_loss_real_mean))
 
