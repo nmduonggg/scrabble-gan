@@ -12,7 +12,7 @@ def convert_to_gan_reading_format_save(input_dir, output_dir, target_size, bucke
     (3) process/ filter images along its respective transcriptions
     (4) compute meta data (such as transcription-length distribution across iamDB words)
 
-    :param input_dir:       directory containing iamDB (words)
+    :param input_dir:       directory containing iamDB (words.txt and image folders)
     :param output_dir:      output location
     :param target_size:     (height, width, channels) - here height width ratio is 2:1 (32:16px) per char
     :param bucket_size:     max transcription length considered in this work
