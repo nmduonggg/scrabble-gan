@@ -11,13 +11,13 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 def main():
     latent_dim = 128
-    char_vec = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    path_to_saved_model = '/home/ubuntu/workspace/scrabble-gan/res/out/big_ac_gan/model/generator_15'
+    char_vec = 'aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ- '
+    path_to_saved_model = '/kaggle/input/scrabble-gan-modelv1/generator_15'
 
     # number of samples to generate
     batch_size = 10
     # sample string
-    sample_string = 'machinelearning'
+    sample_string = 'Ngọc minh'
     # load trained model
     imported_model = tf.saved_model.load(path_to_saved_model)
 
