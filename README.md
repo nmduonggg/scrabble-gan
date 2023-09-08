@@ -1,17 +1,31 @@
-# ScrabbleGAN (TensorFlow 2/ Python3)
+# VietnameseGAN (TensorFlow 2/ Python3)
 
 Implementation of [ScrabbleGAN](https://arxiv.org/pdf/2003.10557.pdf) for adversarial generation of handwritten text images in TensorFlow 2.1.
 
+This repo has been adjusted and changed for Vietnamese handwritting characters generation. It is used for the purpose of generating synthetic training data for our model in OCR task - AI4ALL 2023 competetion. For more information, please refer this: [AI4ALL](https://bkai.ai/soict-hackathon-2023/?fbclid=IwAR14-5SGJdQmSVWU2tQlbkNCgdBx46LZvZQyjgJugop5k2wMdonWLBTA-Ng)
+
 <p align="center">
-  <img src="doc/ScrabbleGan_no_grad_bal.gif" />
+  <img src="doc\biggan.gif" />
 </p>
 
  ## Try it out!
- [<img src="https://colab.research.google.com/assets/colab-badge.svg" align="center">](https://colab.research.google.com/drive/1-JxJsYbAM9W69nTxSKTp-gR3ofwv5SjM?usp=sharing)
+ [<img src="https://seeklogo.com/images/K/kaggle-logo-83322F52DE-seeklogo.com.png" align="center">](https://www.kaggle.com/code/nmddfdfd/scrabblegan-gen/notebook)
 
  Example on how to train ScrabbleGAN + how to generate images. [More details can be found here](https://towardsdatascience.com/scrabblegan-adversarial-generation-of-handwritten-text-images-628f8edcfeed).
+
+ ## Training and weights
+
+ - We train with public dataset from AI4ALL OCR track dataset, including about 10k Vietnames handwriting images.
+ - We formulated the dataset as IAM-Handwriting DB format, and followed the original instructions
+ - We trained for 15 epochs due to resource limitation. The trained weights can be found [here](https://www.kaggle.com/datasets/nmddfdfd/scrabble-gan-modelv1)
+
+ ## To generate Vietnamese HW
+ ```
+ python src/generate.py --saved-model <path/to/trained/TFModel>
+ ```
     
- ## Setup (only tested on MacOS)
+ # Original paper: ScrabbleGan    
+ ## Setup (Original paper)
  
  1. Download and extract [IAM-Handwriting DB](http://www.fki.inf.unibe.ch/databases/iam-handwriting-database/download-the-iam-handwriting-database) 
  and [random word list](https://www.dropbox.com/s/o60ubzh3m163j0x/random_words.txt?dl=0) as described in src/dinterface/dinterface.py
