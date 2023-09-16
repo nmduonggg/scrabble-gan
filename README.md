@@ -19,6 +19,14 @@ This repo has been adjusted and changed for Vietnamese handwritting characters g
  - We formulated the dataset as IAM-Handwriting DB format, and followed the original instructions
  - We trained for 15 epochs due to resource limitation. The trained weights can be found [here](https://www.kaggle.com/datasets/nmddfdfd/scrabble-gan-modelv1)
 
+ #### IAM database reformating
+ 
+ - We reconstruct the format of original dataset and rename it to IAM DB format. The detailed implementation can be found in `convert2IAM.py`
+- For converting, run the following command:
+```bash
+python convert2IAM.py --train-list <path/to/train/txt> --val-list <path/to/val/txt> --images-dir <path/to/image/dir>
+```
+
  ## To generate Vietnamese HW
  ```
  python src/generate.py --saved-model <path/to/trained/TFModel>
