@@ -34,6 +34,11 @@ def get_parse():
         '--variation',
         help='Number of different style for each text sample',
         default=3
+    ),
+    args.add_argument(
+        '--show',
+        help='Show periodically or not (used for notebook)',
+        action='store_true'
     )
     
     return args.parse_args()
