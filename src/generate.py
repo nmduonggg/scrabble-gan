@@ -12,7 +12,7 @@ def get_parse():
     args.add_argument(
         '--text-path',
         help='Path to text list that you want to generate',
-        default='res\data\random_words.txt'
+        required=True
     )
     args.add_argument(
         '--weight',
