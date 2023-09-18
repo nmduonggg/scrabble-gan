@@ -25,7 +25,7 @@ def get_parse():
         default='outputs/'
     )
     args.add_argument(
-        '--num-unqiues',
+        '--num-uniques',
         type=int,
         help='Number of unique texts taken from list',
         default=10000
