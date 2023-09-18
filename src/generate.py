@@ -12,7 +12,7 @@ def get_parse():
     args.add_argument(
         '--text-path',
         help='Path to text list that you want to generate',
-        required=True
+        default='res/data/viet74k.txt'
     )
     args.add_argument(
         '--weight',
