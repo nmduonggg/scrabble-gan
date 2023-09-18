@@ -72,6 +72,7 @@ if not os.path.exists(save_image_dir):
 save_annot_path = os.path.join(save_annot_dir, "annotations.txt")
 
 # Setup functions
+show = args.show
 def write_annot(image_name, label, img_id):
     if img_id == 0:
         with open(save_annot_path, 'w') as f:
@@ -123,7 +124,7 @@ def main():
     for i, text in tqdm.tqdm(enumerate(texts[:num_uniqnues]), total=num_uniqnues):
         try:
             if i % 100 == 0:
-                show_or_save(text, variation, save=True, show=True)
+                show_or_save(text, variation, save=True, show=args.show)
             else:
                 show_or_save(text, variation, save=True, show=False)
         except: 
