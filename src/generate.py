@@ -19,7 +19,7 @@ def get_parse():
         help='Path to trained model',
         required=True
     )
-    args.add_argmuent(
+    args.add_argument(
         '--output-dir',
         help='Directory to save ouput: images and annotations',
         default='outputs/'
