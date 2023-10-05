@@ -119,9 +119,9 @@ def show_or_save(text: str, n_samples: int, save=False, show=True):
 img_id = 0
 
 def main():
-    num_uniqnues = args.num_uniques
+    num_uniqnues = len(texts)
     variation = args.variation
-    for i, text in tqdm.tqdm(enumerate(texts[:num_uniqnues]), total=num_uniqnues):
+    for i, text in tqdm.tqdm(enumerate(texts), total=num_uniqnues):
         try:
             if i % 100 == 0:
                 show_or_save(text, variation, save=True, show=args.show)
@@ -130,3 +130,5 @@ def main():
         except: 
             log_info = f"[ERROR] Exception on {text}"
             print(log_info)
+            
+main()
